@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Sitesi</title>
+    <!-- CSS kısımları alt kısımda gösterilmiştir --> 
+    <style>
+        *{
+            padding:0px;
+            margin:0px;
+        }
+        
+        
+        .header{ /* Bu kısımda CSS ile ana menüyü tasarlıyorum*/ 
+            height: 70px;
+            background-color: cadetblue;
+        }
+        .menu{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 70px;
+            list-style-type: none;
+            gap: 60px;
+        }
+        .menu .menu-item{ /* Bu kısımda CSS ile ana menünüde bulunan elemanların özelliklerini değiştiriyorum*/ 
+            background-color: cadetblue;
+            border-radius: 10px;
+            padding: 10px;
+            
+        }
+        .menu .menu-item:hover{ /* Bu kısımda CSS ile ana menünüde bulunan elemanlara animasyon ekliyorum*/ 
+            background-color:goldenrod;
+
+        }
+        .menu-item a{
+            text-decoration: none; /* Alt çizgiyi kaldırdım */
+            color: inherit; 
+        }
+        .hobi{ /* Bu kısımda CSS ile paragrafımın temel görüntü özelliklerini ayarlıyorum*/ 
+           font-family: 'Times New Roman', Times, serif;
+           font-style: italic;
+           font-size: 14px;
+           letter-spacing: 1.5px;
+           text-transform: capitalize; 
+           display: inline-block;
+           background-color: darkorchid;
+           color:antiquewhite;
+           padding:25px;
+           position: absolute;
+           left:50px;
+           top:100px;
+           border-radius: 10px;
+           border: 5px solid black;
+           margin-right: 50px;
+           position: absolute;
+        }
+        span{ /* Bu kısımda CSS ile belirlediğim özel kelimelerin rengini,boyutunu ve konumunu değiştiren çeşitli özellikler ekledime*/
+           font-family: 'Times New Roman', Times, serif;
+           font-style: italic;
+           font-size: 14px;
+           letter-spacing: 1.5px;
+           text-transform: capitalize; 
+           display: inline-block;
+           color:black;
+           font-weight: bold;
+        }
+        .özellik1{ /* Bu kısımda CSS ile animasyon ekliyorum*/
+            animation: isim 12s infinite alternate;
+            position: absolute;
+            left:700px;
+            top:310px;
+            right:20px;
+            font-size:28px;
+            font-family: 'Times New Roman', Times, serif;
+            font-style: italic;
+
+        }
+        @keyframes isim{
+            0%{
+                opacity: 1;
+            }
+            25%{
+                opacity: 0;
+            }
+            50%{
+                opacity: 0;
+            }
+            75%{
+                opacity: 0;
+            }
+            100%{
+                opacity: 1;
+            }
+        }
+        .özellik2{ /* Bu kısımda CSS ile animasyon ekliyorum*/
+            animation: isim2 12s infinite alternate;
+            position: absolute;
+            left:700px;
+            top:310px;
+            right:20px;
+            font-size:28px;
+            font-family: 'Times New Roman', Times, serif;
+            font-style: italic;
+        }
+        @keyframes isim2{
+            0%{
+                opacity: 0;
+            }
+            25%{
+                opacity: 1;
+            }
+            50%{
+                opacity: 0;
+            }
+            75%{
+                opacity: 0;
+            }
+            100%{
+                opacity: 0;
+        }
+    }
+        .özellik3{ /* Bu kısımda CSS ile animasyon ekliyorum*/
+            animation: isim3 12s infinite alternate;
+            position: absolute;
+            left:700px;
+            top:310px;
+            right:20px;
+            font-size:28px;
+            font-family: 'Times New Roman', Times, serif;
+            font-style: italic;
+        }
+        @keyframes isim3{
+            0%{
+                opacity: 0;
+            }
+            25%{
+                opacity: 0;
+            }
+            50%{
+                opacity: 1;
+            }
+            75%{
+                opacity: 0;
+            }
+            100%{
+                opacity: 0;
+        }
+    }
+        .özellik4{ /* Bu kısımda CSS ile animasyon ekliyorum*/
+            animation: isim4 12s infinite alternate;
+            position: absolute;
+            left:700px;
+            top:310px;
+            right:20px;
+            font-size:28px;
+            font-family: 'Times New Roman', Times, serif;
+            font-style: italic;
+        }
+        @keyframes isim4{
+            0%{
+                opacity: 0;
+            }
+            25%{
+                opacity: 0;
+            }
+            50%{
+                opacity: 0;
+            }
+            75%{
+                opacity: 1;
+            }
+            100%{
+                opacity: 0;
+        }
+    }
+        .transformers{ /* Bu kısımda CSS ile resmin boyutlandırılması ve gösterilmesi gibi temel özellikelri yapıyorum*/ 
+          position: absolute;
+          left:30px;
+          top:280px;
+          bottom: 50px;
+          animation: imageFade 12s infinite alternate;
+          opacity: 1;
+          width: 600px;
+          height: 380px;
+          border: 5px solid black;
+        }
+        @keyframes imageFade{
+            0%{
+                opacity: 1;
+            }
+            25%{
+                opacity: 0;
+            }
+            50%{
+                opacity: 0;
+            }
+            75%{
+                opacity: 0;
+            }
+            100%{
+                opacity: 1;
+            }
+            
+        }
+        .batman{ /* Bu kısımda CSS ile resmin boyutlandırılması ve gösterilmesi gibi temel özellikelri yapıyorum*/ 
+          position: absolute;
+          left:30px;
+          top:280px;
+          bottom: 50px;
+          animation: imageFade2 12s infinite alternate;
+          opacity: 1;
+          width: 600px;
+          height: 380px;
+          border: 5px solid black;
+        }
+        @keyframes imageFade2{
+            0%{
+                opacity: 0;
+            }
+            25%{
+                opacity: 1;
+            }
+            50%{
+                opacity: 0;
+            }
+            75%{
+                opacity: 0;
+            }
+            100%{
+                opacity: 0;
+            }
+            
+        }
+        .spiderman{ /* Bu kısımda CSS ile resmin boyutlandırılması ve gösterilmesi gibi temel özellikelri yapıyorum*/ 
+          position: absolute;
+          left:30px;
+          top:280px;
+          bottom: 50px;
+          animation: imageFade3 12s infinite alternate;
+          opacity: 1;
+          width: 600px;
+          height: 380px;
+          border: 5px solid black;
+        }
+        @keyframes imageFade3{
+            0%{
+                opacity: 0;
+            }
+            25%{
+                opacity: 0;
+            }
+            50%{
+                opacity: 1;
+            }
+            75%{
+                opacity: 0;
+            }
+            100%{
+                opacity: 0;
+            }
+            
+        }
+        .obivan{ /* Bu kısımda CSS ile resmin boyutlandırılması ve gösterilmesi gibi temel özellikelri yapıyorum*/ 
+          position: absolute;
+          left:30px;
+          top:280px;
+          bottom: 50px;
+          animation: imageFade4 12s infinite alternate;
+          opacity: 1;
+          width: 600px;
+          height: 380px;
+          border: 5px solid black;
+        }
+        @keyframes imageFade4{
+            0%{
+                opacity: 0;
+            }
+            25%{
+                opacity: 0;
+            }
+            50%{
+                opacity: 0;
+            }
+            75%{
+                opacity: 1;
+            }
+            100%{
+                opacity: 0;
+            }
+            
+        }
+
+    
+
+    </style>
+</head>
+<body>
+    <div class="header"> <!-- header etiketini tanımladım ve ana menünün html kısmını oluşturdum --> 
+        <ul class="menu">
+            <li class="menu-item"><a href="index.html">Ana Sayfa</a></li>
+            <li class="menu-item"><a href="ben_kimim.html">Ben Kimim</a></li>
+            <li class="menu-item"><a href="hobilerim.html">Hobilerim</a></li>
+            <li class="menu-item"><a href="yapay_zeka.html">Yapay Zeka</a></li>
+            <li class="menu-item"><a href="projeler.html">Projeler</a></li>
+        </ul>
+    </div>
+    <div class="main">
+        <!-- paragrafı oluşturdum --> 
+        <p class="hobi">Hobilerim sırasıyla 4 ana başlık altında incelenebilir.Bunlardan ilki ve en sevdiğim <span>Transformers</span> filmlerini ve dizilerini izlemek.Diğer beni cezbeden hobilerim ise <span>DC </span> yapımı süper kahraman filmlerini izlemek,özellikle de bu son zamanlarda ilgimi çeken <span>Marvel</span> filmlerini ve video oyunlarını oynamak.Sonuncusu ise özellikle ailemle beraber izlediğim <span> Star Wars </span> filmlerini seyretmektir.Bu hobilerim sayesinde boş zamanlarımı doldurup güzel bir vakit geçiriyorum.Bu web sayfasını ziyaret eden herkese de bu tarz film veya dizileri izleme gibi hobilere katkı sağlamak çok isterim.Nunun için bu tarz film veya dizielrdeki ana karakterlerin özelliklerini ve kısa hayat hikayelerini siz okuyculara web sayfasının alt kısmında gösterdim.</p>
+    </div>
+    <div class="film">
+        <img class="transformers" src="transformers.webp">
+        <img class="batman" src="batman.webp">
+        <img class="spiderman" src="spiderman.jpeg">
+        <img class="obivan" src="obivan.jpg">
+    </div>
+    <!-- paragrafları oluşturdum --> 
+    <p class="özellik1">Optimus Prime,otobotların lideri olarak binlerce yıldır CyberTron gezegeninin korunmasında ve Decepticonlar'a karşı oluşan savaşta insan ırkını korumakta görev almıştır.Bu düşüncesi yüzünden kardeşi sayılan Megatron ile fikir ayrılığına uğramış ve Sentinel Prime'ın ihanetinde uğramıştır.Her ne kadar insan ırkını desteklese de insanlar Lockdown ve Galvatron ile iş birliği yaparak Optimus Prime'ı devirmeye çalışmışlardır.</p>
+    <p class="özellik2">Batman,Gotham şehrini suçlulardan korumaya yemin etmiş bir adalet savaşçısıdır.herhangi bir süper gücü olmamasına rağmen sahip olduğu bilgisi ve teknik becerisiyle Süperman'i bile bire bir mücadele de yenebilmiştir.Joker,Hush,Riddler gibi Gotham halkını tehdit eden suçlulardan korumaktadır.</p>
+    <p class="özellik3">Spiderman,üniversite de okuyan sıradan bir öğrenci olan Peter Parker'ın bir radyoaktiv örümcek tarafından ısırılması sonucu oluşan Peter Parker'ın diğer kişiliğidir.Çeşitli fiziksel güçlere sahip olan Spiderman'in en büyük düşmanlarından olan Green Goblin,Venom ve Kraven ile mücadele etmektedir.Tüm bu mücadelerin yanında kendi hayatını kurmaya çalışan genç bir insandır.</p>
+    <p class="özellik4">Obi-Wan Kenobi,çok uzak bir galakside İmparatorluğu devirip Cumhuriyeti korumaya çalışan bir Jedi Ustası'dır.Güzel ahlakı ve sahip olduğu teknik bilgisiyle bir çok Jei Ustası'ndan daha öne çıkmaktadır.Yanına aldığı çırak olan ve seçilmiş kişi olduğuna inanılan Anakin SkyWalker'ın ustası olarak yaklaşık 20 yıl geçirmiştir.Anakin SkyWalker'ın ihaneti yüzünden kendini affetmemiş ve geri kalan hayatını bir çöl gezegeninde geçirmiştir. </p>
+</body>
+</html>

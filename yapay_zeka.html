@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Sitesi</title>
+    <!-- CSS kısımları alt kısımda gösterilmiştir --> 
+    <style>
+        *{
+            padding:0px;
+            margin:0px;
+        }
+        
+        
+        .header{ /* Bu kısımda CSS ile ana menüyü tasarlıyorum*/ 
+            height: 70px;
+            background-color: cadetblue;
+        }
+        .menu{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 70px;
+            list-style-type: none;
+            gap: 60px;
+        }
+        .menu .menu-item{ /* Bu kısımda CSS ile ana menünüde bulunan elemanların özelliklerini değiştiriyorum*/ 
+            background-color: cadetblue;
+            border-radius: 10px;
+            padding: 10px;
+            
+        }
+        .menu .menu-item:hover{ /* Bu kısımda CSS ile ana menünüde bulunan elemanlara animasyon ekliyorum*/
+            background-color:goldenrod;
+
+        }
+        .menu-item a{
+            text-decoration: none; /* Alt çizgiyi kaldırdım */
+            color: inherit; 
+        }
+        .yapay{ /* Bu kısımda CSS ile paragrafımın temel görüntü özelliklerini ayarlıyorum*/ 
+            font-family: 'Times New Roman', Times, serif;
+            font-style: italic;
+            font-size: 14px;
+            display: inline-block;
+            background-color: darkorchid;
+            color:antiquewhite;
+            border-radius: 10px;
+            text-transform: capitalize;
+            letter-spacing: 1.5px;
+            left:20px;
+            top:100px;
+            right:10px;
+            position: absolute;
+            border: 5px solid black;
+            padding:25px;
+        }
+        .a1{ /* Bu kısımda CSS ile resmin boyutlandırılması ve gösterilmesi gibi temel özellikelri yapıyorum*/
+            width:200px;
+            height:200px;
+            left:100px;
+            top:300px;
+            border:5px solid black;
+            position:absolute;
+        }
+        .a2{ /* Bu kısımda CSS ile resmin boyutlandırılması ve gösterilmesi gibi temel özellikelri yapıyorum*/
+            width:200px;
+            height:200px;
+            left:350px;
+            top:300px;
+            position:absolute;
+        }
+        .a3{ /* Bu kısımda CSS ile resmin boyutlandırılması ve gösterilmesi gibi temel özellikelri yapıyorum*/
+            width:200px;
+            height:200px;
+            left:610px;
+            top:300px;
+            border:5px solid black;
+            position:absolute;
+        }
+        .a4{ /* Bu kısımda CSS ile resmin boyutlandırılması ve gösterilmesi gibi temel özellikelri yapıyorum*/
+            width:200px;
+            height:200px;
+            left:850px;
+            top:300px;
+            position:absolute;
+        }
+        .a5{ /* Bu kısımda CSS ile resmin boyutlandırılması ve gösterilmesi gibi temel özellikelri yapıyorum*/
+            width:200px;
+            height:200px;
+            left:1060px;
+            top:300px;
+            border:5px solid black;
+            position:absolute;
+        }
+        .a6{ /* Bu kısımda CSS ile resmin boyutlandırılması ve gösterilmesi gibi temel özellikelri yapıyorum*/
+            font-family: 'Times New Roman', Times, serif;
+            font-style: italic;
+            font-size: 42px;
+            display: inline-block;
+            text-transform: capitalize;
+            letter-spacing: 1.5px;
+            left:600px;
+            top:600px;
+            right:10px;
+            position: absolute;
+        }
+
+
+    
+
+    </style>
+</head>
+<body>
+    <div class="header"> <!-- header etiketini tanımladım ve ana menünün html kısmını oluşturdum -->
+        <ul class="menu">
+            <li class="menu-item"><a href="index.html">Ana Sayfa</a></li>
+            <li class="menu-item"><a href="ben_kimim.html">Ben Kimim</a></li>
+            <li class="menu-item"><a href="hobilerim.html">Hobilerim</a></li>
+            <li class="menu-item"><a href="yapay_zeka.html">Yapay Zeka</a></li>
+            <li class="menu-item"><a href="projeler.html">Projeler</a></li>
+        </ul>
+        <div class="main">
+            <!-- paragrafı oluşturdum -->
+            <p class="yapay">Bu yazımda siz okuyuculara yapay zeka geliştiren firmaların ürünlerini pazarlamada kullandıkları çeşitli stratejilerden bahsedicem.Bu stratejilerin en iyi örneklerinden birisi olan <span>Ultralytics</span>'in geliştirdiği <span>YOLO(You Look Only Once)</span> nesne tespit modelinin pazarlamasında kullanılan stratejilerdir.Ultralytics firmasının geliştrdiği en iyi tespit modelleri sırasıyla YOLOv5,YOLOv8,YOLOv11'dir.İşin ilginç tarafı ise sizlere sıraladığım tüm bu YOLO modellerinin hepsinin kaynak kodu aynı sadece yapılandırma dosyaları farklı.O zaman soru şu:Gerçekten YOLO modelleri sürekli güncelleniyor mu yoksa bu bir pazarlama stratejisi mi?Mesela YOLOv8'in yapılandırma dosyadına bulunan katman sayılarının YOLOv11 ile aynı olması ve diğer YOLO modellerindeki sadece bazı katmanlarının dağılımı ve sayılarının değişmesi bir tesadüf mü?Kısacası bu yazımda demek istediğim şeye bir diğer güzel örnek ise YOLOv8'in en belirgin özelliği olan C2F katmanının aslında CNN,BatchNormalization ve Activation fonksiyonlarından oluşan bir katman olması gerçeğidir.İşte gerçek soru şu:Her yeni çıkan modelde sadece bazı katmanları değiştirip bunu piyasa sürmeleri sizce bir pazarlama stratejisi mi?</p>
+        </div>
+        <!-- görselleri tanımladım -->
+        <img class="a1" src="pazaar.jpg"/>
+        <img class="a2" src="arti.webp"/>
+        <img class="a3" src="yaapyi.jpg"/>
+        <img class="a4" src="esit.jpg"/>
+        <img class="a5" src="denge.jpg"/>
+        <p class="a6">Yerli YOLO çok yakında ...</p>
+</body>
+</html>

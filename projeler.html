@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Sitesi</title>
+    <!-- CSS kısımları alt kısımda gösterilmiştir --> 
+    <style>
+        *{
+            padding:0px;
+            margin:0px;
+        }
+        
+        
+        .header{ /* Bu kısımda CSS ile ana menüyü tasarlıyorum*/ 
+            height: 70px;
+            background-color: cadetblue;
+        }
+        .menu{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 70px;
+            list-style-type: none;
+            gap: 60px;
+        }
+        .menu .menu-item{ /* Bu kısımda CSS ile ana menünüde bulunan elemanların özelliklerini değiştiriyorum*/ 
+            background-color: cadetblue;
+            border-radius: 10px;
+            padding: 10px;
+            
+        }
+        .menu .menu-item:hover{
+            background-color:goldenrod;
+
+        }
+        .menu-item a{
+            text-decoration: none; /* Alt çizgiyi kaldırdım */
+            color: inherit; 
+        }
+        h2{
+            font-family: 'Times New Roman', Times, serif; /* Bu kısımda CSS ile başlığın boyutunu ve sayfada nerede konumlanacağını belirliyorum*/ 
+            font-size: 42px;
+            font-style: italic;
+            color: black;
+            position: absolute;
+            left: 40%;
+            top: 100px;
+        }
+        .liste{ /* Bu kısımda CSS ile listelediğim maddelerin özellikelrini değiştiriyorum*/ 
+            font-family: 'Times New Roman', Times, serif;
+            font-style: italic;
+            font-size: 24px;
+            color:dimgray;
+            position: absolute;
+            left:5%;
+            top:60%;
+        }
+        .liste li{
+            padding-bottom: 10px; /* Bu kısımda CSS ile listelediğim maddelerin hepsine kendi aralarında mesafe ekliyorum*/ 
+        }
+        p{ /* Bu kısımda CSS ile yazdığım paragrafın özelliklerini değiştiriyorum.Mesela metin boyut ve türü*/ 
+            font-family: 'Times New Roman', Times, serif;
+            font-style: italic;
+            font-size: 14px;
+            display:inline;
+            background-color: darkorchid;
+            color: white;
+            padding: 25px;
+            position: absolute;
+            left: 2%;
+            top: 30%;
+            right:2%;
+            letter-spacing: 1.5px;
+            text-transform: capitalize;
+            border-radius: 20px;
+        }
+        span{
+            letter-spacing: 1.5px;
+            text-transform: capitalize;
+            color:black;
+
+        }
+        
+
+
+    
+
+    </style>
+</head>
+<body>
+    <!-- paragrafı oluşturdum --> 
+    <p>Bu web sayfasında sizlere şu ana kadar yapmış olduğum bazı projeleri listelemek istedim.Yapılan bu projelerde temel olarak makine öğrenmesi,derin öğrenme ve görüntü işleme kullanıldı.Ayrıca bazı projelerde yapay zeka yazılımları gömülü sistemlere aktarıldı.Yapılan bu projelere ek olarak ileriki zamanlarda yapılması planlanan yapay zeka ve gömülü sistemlerle alakalı çeşitli projeler bulunmaktadır.Bu projeler sırasıyla <span>Yerli YOLO(YOLO-Prime)</span> ,<span>Kendi Kendine Öğrenen Lineer Regresyon Modeli</span>,<span>M-CNN modeli</span>'dir.Yapılması planlanan bu projelerle beraber ilerleyen zamanlarda bilgi birikimimin artacağını düşünmekteyim.Şimdiden gelecekteki Halil Hüseyin Çalışkan'a bol şans.</p>
+    <div class="header"> <!-- header etiketini tanımladım ve ana menünün html kısmını oluşturdum --> 
+        <ul class="menu">
+            <li class="menu-item"><a href="index.html">Ana Sayfa</a></li>
+            <li class="menu-item"><a href="ben_kimim.html">Ben Kimim</a></li>
+            <li class="menu-item"><a href="hobilerim.html">Hobilerim</a></li>
+            <li class="menu-item"><a href="yapay_zeka.html">Yapay Zeka</a></li>
+            <li class="menu-item"><a href="projeler.html">Projeler</a></li>
+        </ul>
+       <h2>Projeler</h2> <!-- başlığın ve resimleri tanımladım --> 
+       <div>
+        <ul class="liste">
+            <li class="li">Bilgisayarlı Görü ile Trafik Yoğunluğu Analizi</li>
+            <li class="li">Bilgisayarlı Görü ile Otoparktaki Boş ve Dolu Alanların Tespiti</li>
+            <li class="li">Tensorflow ve Keras ile Kişiye Özel Yüz Tanıma Sistemi</li>
+            <li class="li">Görüntü İşleme ile Üretim Hattındaki Ürünlerin Tespiti ve Sayılandırılması</li>
+            <li class="li">Makine Öğrenmesi ve Derin Öğrenme ile Vücuttaki Çeşitli Tümör ve Hastalıkların Tespiti ve Tanısı</li>
+            <li class="li">Bilgisayarlı Görü ile Askeri Hava Araçlarının Çok Modlu Otonom Tespit ve Takip Yazılımı</li>
+        </ul>
+       </div>
+</body>
+</html>

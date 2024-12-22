@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Sitesi</title>
+    <!-- CSS kısımları alt kısımda gösterilmiştir --> 
+    <style>
+        
+        *{
+            padding:0px; /* Bu kısımda CSS ile web sayfasındaki boşulkarı siliyorum*/ 
+            margin:0px;
+        }
+        .p1{
+            display: inline-block; /* Bu kısımda CSS ile paragrafımın temel görüntü özellikelrini ayarlıyorum*/ 
+            background-color: darkorchid;
+            color:antiquewhite;
+            border-radius: 20px;
+            text-transform: capitalize;
+            letter-spacing: 1.5px;
+            font-size: 14px;
+            font-family: 'Times New Roman';
+            font-style: italic;
+            padding:25px;
+            position: absolute;
+            left:650px;
+            top:170px;
+            animation-name: animasyonum;
+            animation-duration: 4s;
+            animation-iteration-count: infinite;
+            margin-right: 10px;
+            transition: all;
+            transition-duration: 4s;
+        }
+        .p1:hover{ 
+            display: inline-block; /* Bu kısımda CSS ile paragrafın üzerinde gelince çalışan bir animasyon ekliyorum*/ 
+            background-color: darkorchid;
+            color:antiquewhite;
+            border-radius: 20px;
+            text-transform: capitalize;
+            letter-spacing: 2 px;
+            font-size: 28px;
+            font-family: 'Times New Roman';
+            font-style: italic;
+            padding:25px;
+            position: absolute;
+            left:650px;
+            top:170px;
+            animation-name: animasyonum;
+            animation-duration: 4s;
+            animation-iteration-count: infinite;
+            margin-right: 10px;
+            height:300px;
+        }
+        @keyframes animasyonum{
+            0%{
+                color:antiquewhite;
+            }
+            25%{
+                color:aqua
+            }
+            50%{
+                color:chocolate
+            }
+            75%{
+                color:goldenrod
+            }
+            100%{
+                color:palegreen
+            }
+        }
+        .resim{ /* Bu kısımda CSS ile resmin boyutlandırılması ve gösterilmesi gibi temel özellikelri yapıyorum*/ 
+          position: absolute;
+          left:30px;
+          top:160px;
+          animation: imageFade 8s infinite alternate;
+          opacity: 1;
+          width: 600px;
+          height: 500px;
+          border: 5px solid black;
+        }
+        @keyframes imageFade{
+            0%{
+                opacity: 1;
+            }
+            25%{
+                opacity: 0;
+            }
+            50%{
+                opacity: 0;
+            }
+            75%{
+                opacity: 0;
+            }
+            100%{
+                opacity: 1;
+            }
+            
+        }
+        .resim2{
+          position: absolute; /* Bu kısımda CSS ile resmin boyutlandırılması ve gösterilmesi gibi temel özellikelri yapıyorum*/ 
+          left:30px;
+          top:160px;
+          animation: imageFade2 8s infinite alternate;
+          opacity: 1;
+          width: 600px;
+          height: 500px;
+          border: 5px solid black;
+        }
+        @keyframes imageFade2{
+            0%{
+                opacity: 0;
+            }
+            25%{
+                opacity: 1;
+            }
+            50%{
+                opacity: 0;
+            }
+            75%{
+                opacity: 0;
+            }
+            100%{
+                opacity: 0;
+            }
+            
+        }
+        .resim3{
+          position: absolute; /* Bu kısımda CSS ile resmin boyutlandırılması ve gösterilmesi gibi temel özellikelri yapıyorum*/ 
+          left:30px;
+          top:160px;
+          animation: imageFade3 8s infinite alternate;
+          opacity: 1;
+          width: 600px;
+          height: 500px;
+          border: 5px solid black;
+        }
+        @keyframes imageFade3{
+            0%{
+                opacity: 0;
+            }
+            25%{
+                opacity: 0;
+            }
+            50%{
+                opacity: 1;
+            }
+            75%{
+                opacity: 0;
+            }
+            100%{
+                opacity: 0;
+            }
+            
+        }
+        .resim4{
+          position: absolute; /* Bu kısımda CSS ile resmin boyutlandırılması ve gösterilmesi gibi temel özellikelri yapıyorum*/ 
+          left:30px;
+          top:160px;
+          animation: imageFade4 8s infinite alternate;
+          opacity: 1;
+          width: 600px;
+          height: 500px;
+          border: 5px solid black;
+        }
+        @keyframes imageFade4{
+            0%{
+                opacity: 0;
+            }
+            25%{
+                opacity: 0;
+            }
+            50%{
+                opacity: 0;
+            }
+            75%{
+                opacity: 1;
+            }
+            100%{
+                opacity: 0;
+            }
+            
+        }
+        .baslik{
+            letter-spacing: 1.5px; /* Bu kısımda CSS ile başlığın boyutunu ve sayfada nerede konumlanacağını belirliyorum*/ 
+            font-size: 42px;
+            font-family: 'Times New Roman';
+            font-style: italic;
+            position: absolute;
+            left:100px;
+            top:90px;
+        }
+        .header{ /* Bu kısımda CSS ile ana menüyü tasarlıyorum*/ 
+            height: 70px;
+            background-color: cadetblue;
+        }
+        .menu{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 70px;
+            list-style-type: none;
+            gap: 60px;
+        }
+        .menu .menu-item{
+            background-color: cadetblue;
+            border-radius: 10px;
+            padding: 10px;
+            
+        }
+        .menu .menu-item:hover{
+            background-color:goldenrod;
+
+        }
+        .menu-item a {
+            text-decoration: none; /*Alt çizgiyi kaldırırdım*/
+            color: inherit;
+        }
+        span{ /* Bu kısımda CSS ile belirlediğim özel kelimelerin rengini,boyutunu ve konumunu değiştiren çeşitli özellikler ekledime*/ 
+            text-transform: capitalize;
+            letter-spacing: 1.5px;
+            font-size: 14px;
+            color:black;
+            font-family: 'Times New Roman';
+            font-style: italic;
+            font-weight: bold;
+            transition: all;
+            transition-duration: 4s;
+        }
+        span:hover{ /* Bu kısımda CSS de bulunan transition özelliğiyle animasyon ekledim*/ 
+            text-transform: capitalize;
+            letter-spacing: 2 px;
+            font-size: 28px;
+            color:black;
+            font-family: 'Times New Roman';
+            font-style: italic;
+            font-weight: bold;
+
+        }
+
+    </style>
+</head>
+<body>
+    <div class="header"> <!-- header etiketini tanımladım ve ana menünün html kısmını oluşturdum --> 
+        <ul class="menu">
+            <li class="menu-item"><a href="index.html">Ana Sayfa</a></li>
+            <li class="menu-item"><a href="ben_kimim.html">Ben Kimim</a></li>
+            <li class="menu-item"><a href="hobilerim.html">Hobilerim</a></li>
+            <li class="menu-item"><a href="yapay_zeka.html">Yapay Zeka</a></li>
+            <li class="menu-item"><a href="projeler.html">Projeler</a></li>
+        </ul>
+    </div>
+    <div class="main"> <!-- başlığın ve resimleri tanımladım --> 
+        <h2 class="baslik">İçerik</h2>
+        <div class="resim-container">
+            <img class="resim" src="think_1.jpg">
+            <img class="resim2" src="think2.jpg">
+            <img class="resim3" src="think3.jpeg">
+            <img class="resim4" src="think4.jpeg">
+        </div> <!-- paragrafı oluşturdum --> 
+        <p class="p1">Karşınıza çıkan bu web sitesinde temel olarak kendimden,hobilerimden,ilgi alanlarımdan,yapay zekaya olan ilgimden ve projelerimden bahsetmek isterim.Bu web sitesi toplam 5 kısımdan oluşmaktadır ve bunlardan ilk kısmı siz ziyaretçileri karşılayan <span>ana sayfa</span> ekranıdır.Bir diğer kısmı ise size kendimi tantacağım<span> ben kimim</span> ekranıdır.Diğer bölüm ise benim en çok anlatmayı istediğim <span>hobiler</span> bölümüdür.Son iki bölüm ise ilgi alanlarımdan oluşan <span>yapay zeka</span> ve <span>projeler</span> bölümleridir.Bu web sitesi sayesinde siz okuyucular beni daha yakından tanıyabileceksiniz.Şimdiden iyi okumalar dilerim</p>
+    </div>
+</body>
+</html>
