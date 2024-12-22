@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- CSS kısımları alt kısımda gösterilmiştir -->
+    <style>
+        *{
+            padding:0px;
+            margin:0px;
+        }
+        
+        
+        .header{  /* Bu kısımda CSS ile ana menüyü tasarlıyorum*/ 
+            height: 70px;
+            background-color: cadetblue;
+        }
+        .menu{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 70px;
+            list-style-type: none;
+            gap: 60px;
+        }
+        .menu .menu-item{ /* Bu kısımda CSS ile ana menünüde bulunan elemanların özelliklerini değiştiriyorum*/ 
+            background-color: cadetblue;
+            border-radius: 10px;
+            padding: 10px;
+            
+        }
+        .menu .menu-item:hover{ /* Bu kısımda CSS ile ana menünüde bulunan elemanlara animasyon ekliyorum*/
+            background-color:goldenrod;
+
+        }
+        .menu-item a{
+            text-decoration: none; /* Alt çizgiyi kaldırdım */
+            color: inherit; 
+        }
+        p{ /* Bu kısımda CSS ile paragrafımın temel görüntü özelliklerini ayarlıyorum*/ 
+           font-family: 'Times New Roman', Times, serif;
+           font-style: italic;
+           font-size: 14px;
+           letter-spacing: 1.5px;
+           text-transform: capitalize; 
+           display: inline-block;
+           background-color: darkorchid;
+           color:antiquewhite;
+           padding:25px;
+           position: absolute;
+           left:50px;
+           top:150px;
+           border-radius: 10px;
+           border: 5px solid black;
+           margin-right: 50px;
+           position: absolute;
+        }
+        span{
+            color:black;
+            font-family: 'Times New Roman', Times, serif;
+            font-style: italic;
+            font-size: 14px;
+            letter-spacing: 1.5px;
+            text-transform: capitalize; 
+            font-weight: bold;
+        }
+        .tablo{ /* Bu kısımda CSS ile tablonun boyutlarını ayarladım*/ 
+            left:50px;
+            top:300px;
+            position: absolute;
+            border: 5px solid burlywood;
+
+
+        }
+       
+        .tablo th {
+            background-color:cornflowerblue;
+            color:bisque;
+        }
+
+        .tablo td {
+            background-color:aquamarine;
+            color:black;
+        }
+
+    
+
+    </style>
+</head>
+<body>
+    <div class="header"> <!-- header etiketini tanımladım ve ana menünün html kısmını oluşturdum -->
+        <ul class="menu">
+            <li class="menu-item"><a href="index.html">Ana Sayfa</a></li>
+            <li class="menu-item"><a href="ben_kimim.html">Ben Kimim</a></li>
+            <li class="menu-item"><a href="hobilerim.html">Hobilerim</a></li>
+            <li class="menu-item"><a href="yapay_zeka.html">Yapay Zeka</a></li>
+            <li class="menu-item"><a href="projeler.html">Projeler</a></li>
+        </ul>
+    </div>
+    <div class="main">
+        <!-- paragrafı oluşturdum -->
+        <p>Adım halil hüseyin çalışkan.20 yaşındayım.Bursa'da doğdum ve 20 yıldır Bursa'da yaşıyorum.Bir ablam var şuan veterinerlik son sınıf öğrencisi.Bursa Teknik Üniversite'si Bigisayar mühendisliği 1.sınıf öğrencisiyim.Hedefim kendimi <span>yapay zeka,gömülü sistemler,web,görüntü işleme</span> gibi alanlarda geliştirmek.Bu ilgi duyduğum alanların en çok hangi alt alanlarına ilgi duyduğumu bir tablo halinde bu web sayfasında siz değerli okuyuculara gösterdim.Bu tür alanlarda kendimi geliştirmek için üniversitedeki birçok hocam bana yardım ediyor.Bu yardımları için şimdiden onlara teşekkürlerimi arz ederim.</p>
+    </div>
+    <br/>
+    <!-- tablo oluşturdum -->
+    <table  class="tablo" border="1">
+        <thead>
+            <tr>
+                <th>Yapay Zeka</th>
+                <th>Görüntü İşleme</th>
+                <th>Gömülü Sistemler</th>
+                <th>Web</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Bilgisayarlı Görü</td>
+                <td>OpenCV Fonksiyonları</td>
+                <td>Nvidia Jetson Kartları</td>
+                <td>Flask ile Görüntü Aktarımı</td>
+            </tr>
+            <tr>
+                <td>ANN,CNN,YOLO(Yerli YOLO çok yakında ...)</td>
+                <td>Morfolojik İşlemler(Canny,Dilation,Thresholding,Transformation)</td>
+                <td>Nvidia Orin Nano Super Developer Kit</td>
+                <td>Webteki Görüntüyü Gömülü Sisteme Bağlama</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
