@@ -11,7 +11,14 @@
             margin:0px;
         }
         
-        
+        body {
+          background-image: url("birsıfır.jpg");
+          background-size: cover; /* Arka plan resmini ekran boyutuna göre ölçeklendirir */
+          background-position: center; /* Resmin merkezlenmesini sağlar */
+          background-attachment: fixed; /* Sayfa kaydırıldığında arka planın sabit kalmasını sağlar */
+          height: 100vh; /* Sayfa yüksekliğini tam ekran yapar */
+          margin: 0; /* Marginleri sıfırlar */
+        }
         .header{ /* Bu kısımda CSS ile ana menüyü tasarlıyorum*/ 
             height: 70px;
             background-color: cadetblue;
@@ -42,8 +49,9 @@
             font-family: 'Times New Roman', Times, serif; /* Bu kısımda CSS ile başlığın boyutunu ve sayfada nerede konumlanacağını belirliyorum*/ 
             font-size: 42px;
             font-style: italic;
-            color: black;
+            color:white;
             position: absolute;
+            font-weight: bold;
             left: 40%;
             top: 100px;
         }
@@ -51,7 +59,8 @@
             font-family: 'Times New Roman', Times, serif;
             font-style: italic;
             font-size: 24px;
-            color:dimgray;
+            color:white;
+            font-weight: bold;
             position: absolute;
             left:5%;
             top:60%;

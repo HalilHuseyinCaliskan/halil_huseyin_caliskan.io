@@ -11,7 +11,14 @@
             margin:0px;
         }
         
-        
+        body {
+          background-image: url("yapayakil.jpg");
+          background-size: cover; /* Arka plan resmini ekran boyutuna göre ölçeklendirir */
+          background-position: center; /* Resmin merkezlenmesini sağlar */
+          background-attachment: fixed; /* Sayfa kaydırıldığında arka planın sabit kalmasını sağlar */
+          height: 100vh; /* Sayfa yüksekliğini tam ekran yapar */
+          margin: 0; /* Marginleri sıfırlar */
+        }
         .header{ /* Bu kısımda CSS ile ana menüyü tasarlıyorum*/ 
             height: 70px;
             background-color: cadetblue;
@@ -62,6 +69,10 @@
             top:300px;
             border:5px solid black;
             position:absolute;
+            transition: all 4s;
+        }
+        .a1:hover{
+            transform: rotateY(180deg);
         }
         .a2{ /* Bu kısımda CSS ile resmin boyutlandırılması ve gösterilmesi gibi temel özellikelri yapıyorum*/
             width:200px;
@@ -69,6 +80,10 @@
             left:350px;
             top:300px;
             position:absolute;
+            transition: all 4s;
+        }
+        .a2:hover{
+            transform: rotateY(180deg);
         }
         .a3{ /* Bu kısımda CSS ile resmin boyutlandırılması ve gösterilmesi gibi temel özellikelri yapıyorum*/
             width:200px;
@@ -77,6 +92,10 @@
             top:300px;
             border:5px solid black;
             position:absolute;
+            transition: all 4s;
+        }
+        .a3:hover{
+            transform: rotateY(180deg);
         }
         .a4{ /* Bu kısımda CSS ile resmin boyutlandırılması ve gösterilmesi gibi temel özellikelri yapıyorum*/
             width:200px;
@@ -84,6 +103,10 @@
             left:850px;
             top:300px;
             position:absolute;
+            transition: all 4s;
+        }
+        .a4:hover{
+            transform: rotateY(180deg);
         }
         .a5{ /* Bu kısımda CSS ile resmin boyutlandırılması ve gösterilmesi gibi temel özellikelri yapıyorum*/
             width:200px;
@@ -92,6 +115,10 @@
             top:300px;
             border:5px solid black;
             position:absolute;
+            transition: all 4s;
+        }
+        .a5:hover{
+            transform: rotateY(180deg);
         }
         .a6{ /* Bu kısımda CSS ile resmin boyutlandırılması ve gösterilmesi gibi temel özellikelri yapıyorum*/
             font-family: 'Times New Roman', Times, serif;
@@ -104,6 +131,8 @@
             top:600px;
             right:10px;
             position: absolute;
+            color: white;
+            font-weight: bold;
         }
 
 
