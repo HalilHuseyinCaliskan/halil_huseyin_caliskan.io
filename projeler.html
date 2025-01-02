@@ -4,103 +4,174 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Web Sitesi</title>
-    <!-- CSS kısımları alt kısımda gösterilmiştir --> 
     <style>
-        *{
-            padding:0px;
-            margin:0px;
+        /*Burada CSS kodunu yazmaya başladım ve sayfanın boşluklarını margin ve padding ile sıfırladım*/
+         * {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
         }
-        
+        /*Burada body kısmına CSS uyguladım ve sayfayı kaplayan bir resim ekledim,tüm sayfayı kaplamasını sağladım ve resmi ortaya hizaladım.Ayrıca attachment=fixed özelliği ile sayfa aşağı kaydırılsa bile resim de aşağı kaymaya devam eder*/
         body {
-          background-image: url("birsıfır.jpg");
-          background-size: cover; /* Arka plan resmini ekran boyutuna göre ölçeklendirir */
-          background-position: center; /* Resmin merkezlenmesini sağlar */
-          background-attachment: fixed; /* Sayfa kaydırıldığında arka planın sabit kalmasını sağlar */
-          height: 100vh; /* Sayfa yüksekliğini tam ekran yapar */
-          margin: 0; /* Marginleri sıfırlar */
+            background-image: url("indir.gif");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            color: wheat;
+            overflow-x: hidden;
         }
-        .header{ /* Bu kısımda CSS ile ana menüyü tasarlıyorum*/ 
+        /*Burada menü ekranının flex ile hizaldım ve renk verdim(rgba).Ayrıca width komutu ile sayfayı tamamen kaplamasını istedim*/
+        .header {
             height: 70px;
-            background-color: cadetblue;
-        }
-        .menu{
+            background-color: rgba(0, 0, 0, 0.8);
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 70px;
-            list-style-type: none;
-            gap: 60px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
         }
-        .menu .menu-item{ /* Bu kısımda CSS ile ana menünüde bulunan elemanların özelliklerini değiştiriyorum*/ 
-            background-color: cadetblue;
-            border-radius: 10px;
-            padding: 10px;
-            
+        /*Burada menü ekranının elemanları arasında boşluk bıraktım ve link gibi görünen alt çizgiyi kaldırdım*/
+        .menu {
+            display: flex;
+            gap: 40px;
+            list-style: none;
         }
-        .menu .menu-item:hover{
-            background-color:goldenrod;
-
+        /*Burada her bir menü elemanına padding(iç boşluk) ekledim ve transition ile geçici efekt ekledim*/
+        .menu-item a {
+            text-decoration: none;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
         }
-        .menu-item a{
-            text-decoration: none; /* Alt çizgiyi kaldırdım */
-            color: inherit; 
+        /*Geçici efekt(sadece basılı tutunca)*/
+        .menu-item a:hover {
+            background-color: goldenrod;
+            color: black;
         }
-        h2{
-            font-family: 'Times New Roman', Times, serif; /* Bu kısımda CSS ile başlığın boyutunu ve sayfada nerede konumlanacağını belirliyorum*/ 
+        /*Burada amacım üst paddingi ayarlamak ve yazılan metinleri ortaya hizalamak*/
+        .main {
+            padding-top: 100px;
+            text-align: center;
+        }
+        /*Burada başlığın rengini,kalınlığını,font stilini,abosulute positiona göre konumunu ayarladım*/
+        h2 {
             font-size: 42px;
             font-style: italic;
-            color:white;
-            position: absolute;
+            color: white;
             font-weight: bold;
-            left: 40%;
-            top: 100px;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 120px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
         }
-        .liste{ /* Bu kısımda CSS ile listelediğim maddelerin özellikelrini değiştiriyorum*/ 
-            font-family: 'Times New Roman', Times, serif;
+        /*Burada listeye CSS ekledim ve absolute positiona göre hizaladım ve renk ayarlamalarını yaptım*/
+        .liste {
             font-style: italic;
             font-size: 24px;
-            color:white;
+            color: white;
             font-weight: bold;
             position: absolute;
-            left:5%;
-            top:60%;
+            left: 5%;
+            top: 460%;
+            width: 90%;
         }
-        .liste li{
-            padding-bottom: 10px; /* Bu kısımda CSS ile listelediğim maddelerin hepsine kendi aralarında mesafe ekliyorum*/ 
+ 
+        .liste li {
+            padding-bottom: 12px;
+            transition: color 0.3s ease; /*Her bir listeye efekt ekledim*/
         }
-        p{ /* Bu kısımda CSS ile yazdığım paragrafın özelliklerini değiştiriyorum.Mesela metin boyut ve türü*/ 
-            font-family: 'Times New Roman', Times, serif;
+
+        .liste li:hover {
+            color: goldenrod;
+            cursor: pointer;
+        }
+         /*Burada paragrafın tüm özelliklerini ayarladım.Mesela font-szie ile metindeki yazıların büyüklüğünü ayarladım  ve arka plan rengini değiştirdim*/
+        p {
             font-style: italic;
-            font-size: 14px;
-            display:inline;
-            background-color: darkorchid;
+            font-size: 16px;
+            display: block;
+            background-color: rgba(72, 61, 139, 0.9);
             color: white;
-            padding: 25px;
+            background-color: rgba(72, 61, 139, 0.9);
+            border-radius: 10px;
+            padding: 20px;
             position: absolute;
-            left: 2%;
-            top: 30%;
-            right:2%;
+            left: 5%;
+            top: 125%;
+            right: 5%;
             letter-spacing: 1.5px;
             text-transform: capitalize;
             border-radius: 20px;
+            text-align: justify;
+            font-family: 'Times New Roman', Times, serif;
+            font-style: italic;
+            animation-name: animasyonum1;
+            animation-duration: 4s;
+            animation-iteration-count: infinite;
+            transition-duration: 3s;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            text-align: justify;
         }
-        span{
+        /*Metine basılnca çıkan efekt*/
+        p:hover{
+            transform: rotateX(180deg);
+        }
+        /*Renk değişim animasyonu*/
+        @keyframes animasyonum1{
+            0%{
+                color: white;
+            }
+            75%{
+                color:blue;
+            }
+            100%{
+                color: white;
+            }
+        }
+
+        span {
             letter-spacing: 1.5px;
             text-transform: capitalize;
-            color:black;
-
+            color: goldenrod;
+            font-weight: bold;
         }
-        
 
 
-    
+        /*Mobile aktardım*/
+        @media (max-width: 768px) { /*Mobil gösterimde maksimum genişliği verdim*/
+            h2 {
+                font-size: 36px;
+            }
 
+            .menu {
+                flex-direction: column; /*Mobilde yatay yerine dikey hizalama yaptım*/
+                gap: 15px;
+            }
+
+            .liste {
+                font-size: 20px;
+            }
+
+            p {
+                font-size: 14px;
+                padding: 20px;
+            }
+        }
     </style>
 </head>
 <body>
-    <!-- paragrafı oluşturdum --> 
-    <p>Bu web sayfasında sizlere şu ana kadar yapmış olduğum bazı projeleri listelemek istedim.Yapılan bu projelerde temel olarak makine öğrenmesi,derin öğrenme ve görüntü işleme kullanıldı.Ayrıca bazı projelerde yapay zeka yazılımları gömülü sistemlere aktarıldı.Yapılan bu projelere ek olarak ileriki zamanlarda yapılması planlanan yapay zeka ve gömülü sistemlerle alakalı çeşitli projeler bulunmaktadır.Bu projeler sırasıyla <span>Yerli YOLO(YOLO-Prime)</span> ,<span>Kendi Kendine Öğrenen Lineer Regresyon Modeli</span>,<span>M-CNN modeli</span>'dir.Yapılması planlanan bu projelerle beraber ilerleyen zamanlarda bilgi birikimimin artacağını düşünmekteyim.Şimdiden gelecekteki Halil Hüseyin Çalışkan'a bol şans.</p>
-    <div class="header"> <!-- header etiketini tanımladım ve ana menünün html kısmını oluşturdum --> 
+    <!-- Burada header adında bir div etiketi oluşturdum ve web sitenin menülerini konumlandırdım. -->
+    <div class="header"> 
+        <!-- Menüyü gösterebilmem için bir liste yapmalıydım burada da o listeyi yaptım. -->
         <ul class="menu">
             <li class="menu-item"><a href="index.html">Ana Sayfa</a></li>
             <li class="menu-item"><a href="ben_kimim.html">Ben Kimim</a></li>
@@ -108,16 +179,20 @@
             <li class="menu-item"><a href="yapay_zeka.html">Yapay Zeka</a></li>
             <li class="menu-item"><a href="projeler.html">Projeler</a></li>
         </ul>
-       <h2>Projeler</h2> <!-- başlığın ve resimleri tanımladım --> 
+       <h2>Projeler</h2> 
+       <!-- paragrafı oluşturdum -->
+       <p >Bu web sayfasında sizlere şu ana kadar yapmış olduğum bazı projeleri listelemek istedim. Yapılan bu projelerde temel olarak makine öğrenmesi, derin öğrenme ve görüntü işleme kullanıldı. Ayrıca bazı projelerde yapay zeka yazılımları gömülü sistemlere aktarıldı. Yapılan bu projelere ek olarak ileriki zamanlarda yapılması planlanan yapay zeka ve gömülü sistemlerle alakalı çeşitli projeler bulunmaktadır. Bu projeler sırasıyla <span>Yerli YOLO(YOLO-Prime)</span>, <span>Kendi Kendine Öğrenen Lineer Regresyon Modeli</span>, <span>M-CNN modeli</span>'dir. Yapılması planlanan bu projelerle beraber ilerleyen zamanlarda bilgi birikimimin artacağını düşünmekteyim. Şimdiden gelecekteki Halil Hüseyin Çalışkan'a bol şans.</p>
+       
        <div>
         <ul class="liste">
-            <li class="li">Bilgisayarlı Görü ile Trafik Yoğunluğu Analizi</li>
-            <li class="li">Bilgisayarlı Görü ile Otoparktaki Boş ve Dolu Alanların Tespiti</li>
-            <li class="li">Tensorflow ve Keras ile Kişiye Özel Yüz Tanıma Sistemi</li>
-            <li class="li">Görüntü İşleme ile Üretim Hattındaki Ürünlerin Tespiti ve Sayılandırılması</li>
-            <li class="li">Makine Öğrenmesi ve Derin Öğrenme ile Vücuttaki Çeşitli Tümör ve Hastalıkların Tespiti ve Tanısı</li>
-            <li class="li">Bilgisayarlı Görü ile Askeri Hava Araçlarının Çok Modlu Otonom Tespit ve Takip Yazılımı</li>
+            <!-- listenin elemanlaırnı yazdım -->
+            <li>Bilgisayarlı Görü ile Trafik Yoğunluğu Analizi</li>
+            <li>Bilgisayarlı Görü ile Otoparktaki Boş ve Dolu Alanların Tespiti</li>
+            <li>Tensorflow ve Keras ile Kişiye Özel Yüz Tanıma Sistemi</li>
+            <li>Görüntü İşleme ile Üretim Hattındaki Ürünlerin Tespiti ve Sayılandırılması</li>
+            <li>Makine Öğrenmesi ve Derin Öğrenme ile Vücuttaki Çeşitli Tümör ve Hastalıkların Tespiti ve Tanısı</li>
+            <li>Bilgisayarlı Görü ile Askeri Hava Araçlarının Çok Modlu Otonom Tespit ve Takip Yazılımı</li>
         </ul>
-       </div>
+        </div>
 </body>
 </html>

@@ -4,271 +4,132 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Web Sitesi</title>
-    <!-- CSS kısımları alt kısımda gösterilmiştir --> 
     <style>
-        
-        *{
-            padding:0px; /* Bu kısımda CSS ile web sayfasındaki boşulkarı siliyorum*/ 
-            margin:0px;
+        /*Burada CSS kodunu yazmaya başladım ve sayfanın boşluklarını margin ve padding ile sıfırladım*/
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
+        /*Burada body kısmına CSS uyguladım ve sayfayı kaplayan bir resim ekledim,tüm sayfayı kaplamasını sağladım ve resmi ortaya hizaladım.Ayrıca attachment=fixed özelliği ile sayfa aşağı kaydırılsa bile resim de aşağı kaymaya devam eder*/
         body {
-          background-image: url("soru.webp");
-          background-size: cover; /* Arka plan resmini ekran boyutuna göre ölçeklendirir */
-          background-position: center; /* Resmin merkezlenmesini sağlar */
-          background-attachment: fixed; /* Sayfa kaydırıldığında arka planın sabit kalmasını sağlar */
-          height: 100vh; /* Sayfa yüksekliğini tam ekran yapar */
-          margin: 0; /* Marginleri sıfırlar */
+            background-image: url("soru.webp");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            font-family: 'Arial', sans-serif;
+            color: wheat;
+            height: 100vh; /*Ekranın tamamını kaplaması için*/
         }
-        .p1{
-            display: inline-block; /* Bu kısımda CSS ile paragrafımın temel görüntü özellikelrini ayarlıyorum*/ 
-            background-color: darkorchid;
-            color:antiquewhite;
-            border-radius: 20px;
-            text-transform: capitalize;
-            letter-spacing: 1.5px;
-            font-size: 14px;
-            font-family: 'Times New Roman';
-            font-style: italic;
-            padding:25px;
-            position: absolute;
-            left:650px;
-            top:170px;
-            animation-name: animasyonum;
-            animation-duration: 4s;
-            animation-iteration-count: infinite;
-            margin-right: 10px;
-            animation-name: animasyonum11;
-            animation-duration: 6s;
-            animation-iteration-count: infinite;
-
-        }
-        @keyframes animasyonum11{
-            0%{
-                font-size: 14px;
-            }
-            25%{
-                font-size: 32px;
-            }
-            50%{
-                font-size: 32px;
-            }
-            75%{
-                font-size: 24px;
-            }
-            100%{
-                font-size: 14px;
-            }
-        }
-        .p1:hover{ 
-            display: inline-block; /* Bu kısımda CSS ile paragrafın üzerinde gelince çalışan bir animasyon ekliyorum*/ 
-            background-color: darkorchid;
-            color:antiquewhite;
-            border-radius: 20px;
-            text-transform: capitalize;
-            letter-spacing: 2 px;
-            font-size: 28px;
-            font-family: 'Times New Roman';
-            font-style: italic;
-            padding:25px;
-            position: absolute;
-            left:650px;
-            top:170px;
-            animation-name: animasyonum;
-            animation-duration: 4s;
-            animation-iteration-count: infinite;
-            margin-right: 10px;
-            height:300px;
-        }
-        @keyframes animasyonum{
-            0%{
-                color:antiquewhite;
-            }
-            25%{
-                color:aqua
-            }
-            50%{
-                color:chocolate
-            }
-            75%{
-                color:goldenrod
-            }
-            100%{
-                color:palegreen
-            }
-        }
-        .resim{ /* Bu kısımda CSS ile resmin boyutlandırılması ve gösterilmesi gibi temel özellikelri yapıyorum*/ 
-          position: absolute;
-          left:30px;
-          top:160px;
-          animation: imageFade 8s infinite alternate;
-          opacity: 1;
-          width: 600px;
-          height: 500px;
-          border: 5px solid black;
-        }
-        @keyframes imageFade{
-            0%{
-                opacity: 1;
-            }
-            25%{
-                opacity: 0;
-            }
-            50%{
-                opacity: 0;
-            }
-            75%{
-                opacity: 0;
-            }
-            100%{
-                opacity: 1;
-            }
-            
-        }
-        .resim2{
-          position: absolute; /* Bu kısımda CSS ile resmin boyutlandırılması ve gösterilmesi gibi temel özellikelri yapıyorum*/ 
-          left:30px;
-          top:160px;
-          animation: imageFade2 8s infinite alternate;
-          opacity: 1;
-          width: 600px;
-          height: 500px;
-          border: 5px solid black;
-        }
-        @keyframes imageFade2{
-            0%{
-                opacity: 0;
-            }
-            25%{
-                opacity: 1;
-            }
-            50%{
-                opacity: 0;
-            }
-            75%{
-                opacity: 0;
-            }
-            100%{
-                opacity: 0;
-            }
-            
-        }
-        .resim3{
-          position: absolute; /* Bu kısımda CSS ile resmin boyutlandırılması ve gösterilmesi gibi temel özellikelri yapıyorum*/ 
-          left:30px;
-          top:160px;
-          animation: imageFade3 8s infinite alternate;
-          opacity: 1;
-          width: 600px;
-          height: 500px;
-          border: 5px solid black;
-        }
-        @keyframes imageFade3{
-            0%{
-                opacity: 0;
-            }
-            25%{
-                opacity: 0;
-            }
-            50%{
-                opacity: 1;
-            }
-            75%{
-                opacity: 0;
-            }
-            100%{
-                opacity: 0;
-            }
-            
-        }
-        .resim4{
-          position: absolute; /* Bu kısımda CSS ile resmin boyutlandırılması ve gösterilmesi gibi temel özellikelri yapıyorum*/ 
-          left:30px;
-          top:160px;
-          animation: imageFade4 8s infinite alternate;
-          opacity: 1;
-          width: 600px;
-          height: 500px;
-          border: 5px solid black;
-        }
-        @keyframes imageFade4{
-            0%{
-                opacity: 0;
-            }
-            25%{
-                opacity: 0;
-            }
-            50%{
-                opacity: 0;
-            }
-            75%{
-                opacity: 1;
-            }
-            100%{
-                opacity: 0;
-            }
-            
-        }
-        .baslik{
-            letter-spacing: 1.5px; /* Bu kısımda CSS ile başlığın boyutunu ve sayfada nerede konumlanacağını belirliyorum*/ 
-            font-size: 42px;
-            font-family: 'Times New Roman';
-            font-style: italic;
-            position: absolute;
-            left:100px;
-            top:90px;
-        }
-        .header{ /* Bu kısımda CSS ile ana menüyü tasarlıyorum*/ 
+        /*Burada menü ekranının flex ile hizaldım ve renk verdim(rgba).Ayrıca width komutu ile sayfayı tamamen kaplamasını istedim*/
+        .header {
             height: 70px;
-            background-color: cadetblue;
-        }
-        .menu{
+            background-color: rgba(0, 0, 0, 0.8);
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 70px;
-            list-style-type: none;
-            gap: 60px;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
         }
-        .menu .menu-item{
-            background-color: cadetblue;
-            border-radius: 10px;
-            padding: 10px;
-            
-        }
-        .menu .menu-item:hover{
-            background-color:goldenrod;
 
+        .menu {
+            display: flex;
+            gap: 40px; /*Burada menü ekranının elemanları arasında boşluk bıraktım ve link gibi görünen alt çizgiyi kaldırdım*/
+            list-style: none;
         }
+        /*Burada her bir menü elemanına padding(iç boşluk) ekledim ve transition ile geçici efekt ekledim*/
         .menu-item a {
-            text-decoration: none; /*Alt çizgiyi kaldırırdım*/
-            color: inherit;
+            text-decoration: none;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
         }
-        span{ /* Bu kısımda CSS ile belirlediğim özel kelimelerin rengini,boyutunu ve konumunu değiştiren çeşitli özellikler ekledime*/ 
-            text-transform: capitalize;
-            letter-spacing: 1.5px;
-            font-size: 14px;
-            color:black;
-            font-family: 'Times New Roman';
-            font-style: italic;
+        /*Geçici efekt(sadece basılı tutunca)*/
+        .menu-item a:hover {
+            background-color: goldenrod;
+            color: black;
+        }
+        /*Burada amacım üst paddingi ayarlamak ve yazılan metinleri ortaya hizalamak*/
+        .main {
+            padding-top: 100px;
+            text-align: center;
+        }
+        /*Başlığı CSS ile düzenledim metin kalınlığını arttırdım ve pisel boyutnu ayarladım*/
+        .baslik {
+            font-size: 2.5rem;
             font-weight: bold;
-            transition: all;
-            transition-duration: 4s;
         }
-        span:hover{ /* Bu kısımda CSS de bulunan transition özelliğiyle animasyon ekledim*/ 
-            text-transform: capitalize;
-            letter-spacing: 2 px;
-            font-size: 28px;
-            color:black;
-            font-family: 'Times New Roman';
+        /*Div etketinde bulunan resimelri flex ile hizaladım*/
+        .resim {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin: 20px;
+        }
+        /*Resimlerin boyutunu ayarladım ve efekt ekledim*/
+        .resim img {
+            width: 300px;
+            height: 200px;
+            border: 2px solid white;
+            border-radius: 10px;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+        /*Buradaki efekt ile resimlerin alanı artıyor ve zamanla parlaklığı düşüyor*/
+        .resim img:hover {
+            transform: scale(1.1);
+            opacity: 0.9;
+        }
+        /*Burada paragrafın tüm özelliklerini ayarladım.Mesela margin-left ile metni biraz sağa hizaladım ve ve arka plan rengini değiştirdim*/
+        .p1 {
+            margin: 40px;
+            margin-left: 350px;
+            max-width: 800px;
+            background-color: rgba(72, 61, 139, 0.9);
+            color: antiquewhite;
+            border-radius: 10px;
+            padding: 20px;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            text-align: justify;
+            transition: transform 0.3s ease;
+            font-family: 'Times New Roman', Times, serif;
             font-style: italic;
-            font-weight: bold;
-
         }
+        /*Dönüşme efekti ekledim*/
+        .p1:hover {
+            transform: translateY(-10px);
+        }
+        /*Bazı kelimelere özel olarak CSS ekledim*/
+        span {
+            font-weight: bold;
+            color: goldenrod;
+            transition: color 0.3s ease;
+        }
+        /*Efekt ile renkerli değişiyor*/
+        span:hover {
+            color: palegreen;
+        }
+        /*Mobile aktarım için baz ayarlamalar yaptım mesela menüdeki elemanları flex ile yatay değil de dikey hizaladım*/
+        @media (max-width: 768px) {
+            .menu {
+                flex-direction: column;
+                gap: 10px;
+            }
 
+            .resim img {
+                width: 100%;
+                height: auto;
+            }
+        }
     </style>
 </head>
 <body>
-    <div class="header"> <!-- header etiketini tanımladım ve ana menünün html kısmını oluşturdum --> 
+    <!-- Burada header adında bir div etiketi oluşturdum ve web sitenin menülerini konumlandırdım. -->
+    <div class="header">
+        <!-- Menüyü gösterebilmem için bir liste yapmalıydım burada da o listeyi yaptım. -->
         <ul class="menu">
             <li class="menu-item"><a href="index.html">Ana Sayfa</a></li>
             <li class="menu-item"><a href="ben_kimim.html">Ben Kimim</a></li>
@@ -277,15 +138,26 @@
             <li class="menu-item"><a href="projeler.html">Projeler</a></li>
         </ul>
     </div>
-    <div class="main"> <!-- başlığın ve resimleri tanımladım --> 
+    <!-- Burada main adında bir div etiketi oluşturdum ve web sitede kullanılan resimleri ekledim. -->
+    <div class="main">
+        <!-- Burada bir başlık yaptım. -->
         <h2 class="baslik">İçerik</h2>
-        <div class="resim-container">
+        <!-- Buradaki div etiketinin altında resimleri tanımladım.CSS'de ise bu resimleri yukarıda biçimlendirdim -->
+        <div class="resim">
             <img class="resim" src="think_1.jpg">
-            <img class="resim2" src="think2.jpg">
-            <img class="resim3" src="think3.jpeg">
-            <img class="resim4" src="think4.jpeg">
-        </div> <!-- paragrafı oluşturdum --> 
-        <p class="p1">Karşınıza çıkan bu web sitesinde temel olarak kendimden,hobilerimden,ilgi alanlarımdan,yapay zekaya olan ilgimden ve projelerimden bahsetmek isterim.Bu web sitesi toplam 5 kısımdan oluşmaktadır ve bunlardan ilk kısmı siz ziyaretçileri karşılayan <span>ana sayfa</span> ekranıdır.Bir diğer kısmı ise size kendimi tantacağım<span> ben kimim</span> ekranıdır.Diğer bölüm ise benim en çok anlatmayı istediğim <span>hobiler</span> bölümüdür.Son iki bölüm ise ilgi alanlarımdan oluşan <span>yapay zeka</span> ve <span>projeler</span> bölümleridir.Bu web sitesi sayesinde siz okuyucular beni daha yakından tanıyabileceksiniz.Şimdiden iyi okumalar dilerim</p>
+            <img class="resim" src="think2.jpg" >
+            <img class="resim" src="think3.jpeg">
+            <img class="resim" src="think4.jpeg">
+        </div>
+        <!-- Burada paragrafı yazdım. -->
+        <p class="p1">
+            Karşınıza çıkan bu web sitesinde temel olarak kendimden, hobilerimden, ilgi alanlarımdan, yapay zekaya olan ilgimden ve projelerimden bahsetmek isterim. 
+            Bu web sitesi toplam 5 kısımdan oluşmaktadır ve bunlardan ilk kısmı siz ziyaretçileri karşılayan <span>ana sayfa</span> ekranıdır. 
+            Bir diğer kısmı ise size kendimi tanıtacağım <span>ben kimim</span> ekranıdır. 
+            Diğer bölüm ise benim en çok anlatmayı istediğim <span>hobiler</span> bölümüdür. 
+            Son iki bölüm ise ilgi alanlarımdan oluşan <span>yapay zeka</span> ve <span>projeler</span> bölümleridir. 
+            Bu web sitesi sayesinde siz okuyucular beni daha yakından tanıyabileceksiniz. Şimdiden iyi okumalar dilerim.
+        </p>
     </div>
 </body>
 </html>

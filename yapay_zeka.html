@@ -4,144 +4,220 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Web Sitesi</title>
-    <!-- CSS kısımları alt kısımda gösterilmiştir --> 
     <style>
-        *{
-            padding:0px;
-            margin:0px;
+        /*Burada CSS kodunu yazmaya başladım ve sayfanın boşluklarını margin ve padding ile sıfırladım*/
+        * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+ /*Burada body kısmına CSS uyguladım ve sayfayı kaplayan bir resim ekledim,tüm sayfayı kaplamasını sağladım ve resmi ortaya hizaladım.Ayrıca attachment=fixed özelliği ile sayfa aşağı kaydırılsa bile resim de aşağı kaymaya devam eder*/     
+body {
+    background-image: url("yapayakil.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    background-color: #111;
+    color: white;
+    overflow: hidden;
+}
+
+/*Burada menü ekranının flex ile hizaldım ve renk verdim(rgba).Ayrıca width komutu ile sayfayı tamamen kaplamasını istedim*/
+.header {
+    height: 70px;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0; 
+    width: 100%;
+    z-index: 1000;
+}
+
+/*Burada menü ekranının elemanları arasında boşluk bıraktım ve link gibi görünen alt çizgiyi kaldırdım*/
+.menu {
+    display: flex;
+    gap: 40px; /*Burada menü ekranının elemanları arasında boşluk bıraktım ve link gibi görünen alt çizgiyi kaldırdım*/
+    list-style: none;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+}
+
+.menu-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/*Burada her bir menü elemanına padding(iç boşluk) ekledim ve transition ile geçici efekt ekledim*/
+.menu-item a {
+    text-decoration: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+/*Geçici efekt(sadece basılı tutunca)*/
+.menu-item a:hover {
+    background-color: goldenrod;
+    color: black;
+}
+         /*Burada amacım üst paddingi ayarlamak ve yazılan metinleri ortaya hizalamak(ayrıca font verdim)*/
+        .main {
+            padding-top: 100px;
+            text-align: center;
+            font-family: 'Times New Roman', Times, serif;
+            font-style: italic;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            text-align: justify;
         }
-        
-        body {
-          background-image: url("yapayakil.jpg");
-          background-size: cover; /* Arka plan resmini ekran boyutuna göre ölçeklendirir */
-          background-position: center; /* Resmin merkezlenmesini sağlar */
-          background-attachment: fixed; /* Sayfa kaydırıldığında arka planın sabit kalmasını sağlar */
-          height: 100vh; /* Sayfa yüksekliğini tam ekran yapar */
-          margin: 0; /* Marginleri sıfırlar */
+        /*Burada paragrafın tüm özelliklerini ayarladım.Mesela margin-left ile metni biraz sağa hizaladım ve ve arka plan rengini değiştirdim*/
+        .yapay {
+            font-family: 'Times New Roman', serif;
+            font-style: italic;
+            font-size: 18px;
+            line-height: 1.6;
+            background-color: rgba(72, 61, 139, 0.9);
+            border-radius: 10px;
+            color: antiquewhite;
+            padding: 20px;
+            margin: 20px;
+            text-transform: capitalize;
+            letter-spacing: 1.2px;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            text-align: justify;
         }
-        .header{ /* Bu kısımda CSS ile ana menüyü tasarlıyorum*/ 
-            height: 70px;
-            background-color: cadetblue;
-        }
-        .menu{
+
+        /* Resimleri flex ile yatay olark hizaladım ve elemanlar arasına boşluk bıraktım */
+        .images {
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 70px;
-            list-style-type: none;
-            gap: 60px;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 20px;
         }
-        .menu .menu-item{ /* Bu kısımda CSS ile ana menünüde bulunan elemanların özelliklerini değiştiriyorum*/ 
-            background-color: cadetblue;
-            border-radius: 10px;
-            padding: 10px;
-            
+        /*Resimlerin boyutunu ayarladım ve efekt ekledim*/
+        .images img {
+            width: 200px;
+            height: 200px;
+            border: 5px solid #fff;
+            transition: all 0.5s ease;
+            animation-duration: 4s;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease-in-out;
         }
-        .menu .menu-item:hover{ /* Bu kısımda CSS ile ana menünüde bulunan elemanlara animasyon ekliyorum*/
-            background-color:goldenrod;
+        /*Buradaki efekt ile resimlerin alanı artıyor*/
+        .images img:hover {
+            transform: scale(1.2) rotate(180deg);
+        }
 
+        /* Tüm resimlere uygulanan animasyon işlemi(fare imleci üzerine gelince X ve Y eksenlerine göre çevirme işlemi)*/
+        .a1 {
+             animation-name: rotateX; 
+            }
+        .a2 { 
+            animation-name: rotateY; 
         }
-        .menu-item a{
-            text-decoration: none; /* Alt çizgiyi kaldırdım */
-            color: inherit; 
+        .a3 { 
+            animation-name: rotateX; 
         }
-        .yapay{ /* Bu kısımda CSS ile paragrafımın temel görüntü özelliklerini ayarlıyorum*/ 
-            font-family: 'Times New Roman', Times, serif;
-            font-style: italic;
-            font-size: 14px;
-            display: inline-block;
-            background-color: darkorchid;
-            color:antiquewhite;
-            border-radius: 10px;
-            text-transform: capitalize;
-            letter-spacing: 1.5px;
-            left:20px;
-            top:100px;
-            right:10px;
-            position: absolute;
-            border: 5px solid black;
-            padding:25px;
+        .a4 { 
+            animation-name: rotateY;
+         }
+        .a5 {
+             animation-name: rotateX; 
+            }
+        
+        @keyframes rotateX {
+            0% { transform: rotateX(0); }
+            100% { transform: rotateX(360deg); }
         }
-        .a1{ /* Bu kısımda CSS ile resmin boyutlandırılması ve gösterilmesi gibi temel özellikelri yapıyorum*/
-            width:200px;
-            height:200px;
-            left:100px;
-            top:300px;
-            border:5px solid black;
-            position:absolute;
-            transition: all 4s;
+
+        @keyframes rotateY {
+            0% { transform: rotateY(0); }
+            100% { transform: rotateY(360deg); }
         }
-        .a1:hover{
-            transform: rotateY(180deg);
-        }
-        .a2{ /* Bu kısımda CSS ile resmin boyutlandırılması ve gösterilmesi gibi temel özellikelri yapıyorum*/
-            width:200px;
-            height:200px;
-            left:350px;
-            top:300px;
-            position:absolute;
-            transition: all 4s;
-        }
-        .a2:hover{
-            transform: rotateY(180deg);
-        }
-        .a3{ /* Bu kısımda CSS ile resmin boyutlandırılması ve gösterilmesi gibi temel özellikelri yapıyorum*/
-            width:200px;
-            height:200px;
-            left:610px;
-            top:300px;
-            border:5px solid black;
-            position:absolute;
-            transition: all 4s;
-        }
-        .a3:hover{
-            transform: rotateY(180deg);
-        }
-        .a4{ /* Bu kısımda CSS ile resmin boyutlandırılması ve gösterilmesi gibi temel özellikelri yapıyorum*/
-            width:200px;
-            height:200px;
-            left:850px;
-            top:300px;
-            position:absolute;
-            transition: all 4s;
-        }
-        .a4:hover{
-            transform: rotateY(180deg);
-        }
-        .a5{ /* Bu kısımda CSS ile resmin boyutlandırılması ve gösterilmesi gibi temel özellikelri yapıyorum*/
-            width:200px;
-            height:200px;
-            left:1060px;
-            top:300px;
-            border:5px solid black;
-            position:absolute;
-            transition: all 4s;
-        }
-        .a5:hover{
-            transform: rotateY(180deg);
-        }
-        .a6{ /* Bu kısımda CSS ile resmin boyutlandırılması ve gösterilmesi gibi temel özellikelri yapıyorum*/
-            font-family: 'Times New Roman', Times, serif;
-            font-style: italic;
-            font-size: 42px;
-            display: inline-block;
-            text-transform: capitalize;
-            letter-spacing: 1.5px;
-            left:600px;
-            top:600px;
-            right:10px;
-            position: absolute;
-            color: white;
+
+        .a6 {
+            font-size: 32px;
+            font-family: 'Times New Roman', serif;
             font-weight: bold;
+            color: #ffdf00;
+            text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.6);
+            text-transform: uppercase;
+            animation: alan 2s infinite;
+            margin-top: 20px;
         }
 
+        @keyframes alan {
+            0% { 
+                transform: scale(1);
+             }
+            50% { 
+                transform: scale(1.1);
+             }
+            100% { 
+                transform: scale(1);
+             }
+        }
 
-    
+        /*Mobile uyarladım telefonun genişiliğini 768 px olarak kabul ettim*/
+        @media (max-width: 768px) {
+            .menu {
+                flex-direction: column;
+                gap: 15px;
+            }
 
+            .images-container {
+                gap: 20px;
+            }
+
+            .a6 {
+                font-size: 28px;
+            }
+
+            .yapay {
+                font-size: 16px;
+                padding: 15px;
+                margin: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .menu {
+                gap: 10px;
+            }
+
+            .images {
+                gap: 10px;
+            }
+
+            .a6 {
+                font-size: 24px;
+            }
+
+            .yapay {
+                font-size: 14px;
+                padding: 10px;
+                margin: 10px;
+            }
+        }
     </style>
 </head>
 <body>
-    <div class="header"> <!-- header etiketini tanımladım ve ana menünün html kısmını oluşturdum -->
+    <!-- Burada header adında bir div etiketi oluşturdum ve web sitenin menülerini konumlandırdım. -->
+    <div class="header">
+        <!-- Menüyü gösterebilmem için bir liste yapmalıydım burada da o listeyi yaptım. -->
         <ul class="menu">
             <li class="menu-item"><a href="index.html">Ana Sayfa</a></li>
             <li class="menu-item"><a href="ben_kimim.html">Ben Kimim</a></li>
@@ -149,16 +225,23 @@
             <li class="menu-item"><a href="yapay_zeka.html">Yapay Zeka</a></li>
             <li class="menu-item"><a href="projeler.html">Projeler</a></li>
         </ul>
-        <div class="main">
-            <!-- paragrafı oluşturdum -->
-            <p class="yapay">Bu yazımda siz okuyuculara yapay zeka geliştiren firmaların ürünlerini pazarlamada kullandıkları çeşitli stratejilerden bahsedicem.Bu stratejilerin en iyi örneklerinden birisi olan <span>Ultralytics</span>'in geliştirdiği <span>YOLO(You Look Only Once)</span> nesne tespit modelinin pazarlamasında kullanılan stratejilerdir.Ultralytics firmasının geliştrdiği en iyi tespit modelleri sırasıyla YOLOv5,YOLOv8,YOLOv11'dir.İşin ilginç tarafı ise sizlere sıraladığım tüm bu YOLO modellerinin hepsinin kaynak kodu aynı sadece yapılandırma dosyaları farklı.O zaman soru şu:Gerçekten YOLO modelleri sürekli güncelleniyor mu yoksa bu bir pazarlama stratejisi mi?Mesela YOLOv8'in yapılandırma dosyadına bulunan katman sayılarının YOLOv11 ile aynı olması ve diğer YOLO modellerindeki sadece bazı katmanlarının dağılımı ve sayılarının değişmesi bir tesadüf mü?Kısacası bu yazımda demek istediğim şeye bir diğer güzel örnek ise YOLOv8'in en belirgin özelliği olan C2F katmanının aslında CNN,BatchNormalization ve Activation fonksiyonlarından oluşan bir katman olması gerçeğidir.İşte gerçek soru şu:Her yeni çıkan modelde sadece bazı katmanları değiştirip bunu piyasa sürmeleri sizce bir pazarlama stratejisi mi?</p>
-        </div>
-        <!-- görselleri tanımladım -->
-        <img class="a1" src="pazaar.jpg"/>
-        <img class="a2" src="arti.webp"/>
-        <img class="a3" src="yaapyi.jpg"/>
-        <img class="a4" src="esit.jpg"/>
-        <img class="a5" src="denge.jpg"/>
-        <p class="a6">Yerli YOLO çok yakında ...</p>
+    </div>
+    <!-- Burada main adında bir div etiketi oluşturdum ve web sitede kullanılan resimleri ekledim. -->
+    <div class="main">
+         <!-- Burada paragrafı yazdım. -->
+        <p class="yapay">Bu yazımda siz okuyuculara yapay zeka geliştiren firmaların ürünlerini pazarlamada kullandıkları çeşitli stratejilerden bahsedicem.Bu stratejilerin en iyi örneklerinden birisi olan <span>Ultralytics</span>'in geliştirdiği <span>YOLO(You Look Only Once)</span> nesne tespit modelinin pazarlamasında kullanılan stratejilerdir.Ultralytics firmasının geliştrdiği en iyi tespit modelleri sırasıyla YOLOv5,YOLOv8,YOLOv11'dir.İşin ilginç tarafı ise sizlere sıraladığım tüm bu YOLO modellerinin hepsinin kaynak kodu aynı sadece yapılandırma dosyaları farklı.O zaman soru şu:Gerçekten YOLO modelleri sürekli güncelleniyor mu yoksa bu bir pazarlama stratejisi mi?Mesela YOLOv8'in yapılandırma dosyadına bulunan katman sayılarının YOLOv11 ile aynı olması ve diğer YOLO modellerindeki sadece bazı katmanlarının dağılımı ve sayılarının değişmesi bir tesadüf mü?Kısacası bu yazımda demek istediğim şeye bir diğer güzel örnek ise YOLOv8'in en belirgin özelliği olan C2F katmanının aslında CNN,BatchNormalization ve Activation fonksiyonlarından oluşan bir katman olması gerçeğidir.İşte gerçek soru şu:Her yeni çıkan modelde sadece bazı katmanları değiştirip bunu piyasa sürmeleri sizce bir pazarlama stratejisi mi?</p>
+    </div>
+
+    <div class="images">
+        <!-- Buradaki div etiketinin altında resimleri tanımladım.CSS'de ise bu resimleri yukarıda biçimlendirdim -->
+        <img class="a1" src="pazaar.jpg" alt="Image 1"/>
+        <img class="a2" src="arti.webp" alt="Image 2"/>
+        <img class="a3" src="yaapyi.jpg" alt="Image 3"/>
+        <img class="a4" src="esit.jpg" alt="Image 4"/>
+        <img class="a5" src="denge.jpg" alt="Image 5"/>
+    </div>
+
+    <p class="a6">Yerli YOLO çok yakında ...</p>
+
 </body>
 </html>

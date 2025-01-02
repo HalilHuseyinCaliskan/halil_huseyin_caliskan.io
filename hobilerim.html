@@ -4,311 +4,107 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Web Sitesi</title>
-    <!-- CSS kısımları alt kısımda gösterilmiştir --> 
     <style>
-        *{
-            padding:0px;
-            margin:0px;
+        /*Burada CSS kodunu yazmaya başladım ve sayfanın boşluklarını margin ve padding ile sıfırladım*/
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
+         /*Burada body kısmına CSS uyguladım ve sayfayı kaplayan bir resim ekledim,tüm sayfayı kaplamasını sağladım ve resmi ortaya hizaladım.Ayrıca attachment=fixed özelliği ile sayfa aşağı kaydırılsa bile resim de aşağı kaymaya devam eder*/
         body {
-          background-image: url("hobilerr.jpg");
-          background-size: cover; /* Arka plan resmini ekran boyutuna göre ölçeklendirir */
-          background-position: center; /* Resmin merkezlenmesini sağlar */
-          background-attachment: fixed; /* Sayfa kaydırıldığında arka planın sabit kalmasını sağlar */
-          height: 100vh; /* Sayfa yüksekliğini tam ekran yapar */
-          margin: 0; /* Marginleri sıfırlar */
+            font-family: Arial, sans-serif;
+            background: url("hobilerr.jpg") no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
-        
-        .header{ /* Bu kısımda CSS ile ana menüyü tasarlıyorum*/ 
+
+         /*Burada menü ekranının flex ile hizaldım ve renk verdim(rgba).Ayrıca width komutu ile sayfayı tamamen kaplamasını istedim*/
+        .header {
             height: 70px;
-            background-color: cadetblue;
-        }
-        .menu{
+            background-color: rgba(0, 0, 0, 0.8);
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 70px;
-            list-style-type: none;
-            gap: 60px;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
         }
-        .menu .menu-item{ /* Bu kısımda CSS ile ana menünüde bulunan elemanların özelliklerini değiştiriyorum*/ 
-            background-color: cadetblue;
+
+        .menu {
+            display: flex;
+            gap: 40px; /*Burada menü ekranının elemanları arasında boşluk bıraktım ve link gibi görünen alt çizgiyi kaldırdım*/
+            list-style: none;
+        }
+         /*Burada her bir menü elemanına padding(iç boşluk) ekledim ve transition ile geçici efekt ekledim ve border ile kenarlık verdim*/
+        .menu-item a {
+            text-decoration: none;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+        /*Geçici efekt(sadece basılı tutunca)*/
+        .menu-item a:hover {
+            background-color: goldenrod;
+            color: black;
+        }
+
+        /*Burada border ile kenarlık verdim,padding ile iç boşluk bıraktım,metni ortaya hizaladım,her bir satır arası yükselik uzunluğu bıraktım*/
+        .main {
+            padding: 20px;
+            text-align: justify;
+            background-color: rgba(72, 61, 139, 0.9);
             border-radius: 10px;
-            padding: 10px;
-            
-        }
-        .menu .menu-item:hover{ /* Bu kısımda CSS ile ana menünüde bulunan elemanlara animasyon ekliyorum*/ 
-            background-color:goldenrod;
-
-        }
-        .menu-item a{
-            text-decoration: none; /* Alt çizgiyi kaldırdım */
-            color: inherit; 
-        }
-        .hobi{ /* Bu kısımda CSS ile paragrafımın temel görüntü özelliklerini ayarlıyorum*/ 
-           font-family: 'Times New Roman', Times, serif;
-           font-style: italic;
-           font-size: 14px;
-           letter-spacing: 1.5px;
-           text-transform: capitalize; 
-           display: inline-block;
-           background-color: darkorchid;
-           color:antiquewhite;
-           padding:25px;
-           position: absolute;
-           left:50px;
-           top:100px;
-           border-radius: 10px;
-           border: 5px solid black;
-           margin-right: 50px;
-           position: absolute;
-        }
-        span{ /* Bu kısımda CSS ile belirlediğim özel kelimelerin rengini,boyutunu ve konumunu değiştiren çeşitli özellikler ekledime*/
-           font-family: 'Times New Roman', Times, serif;
-           font-style: italic;
-           font-size: 14px;
-           letter-spacing: 1.5px;
-           text-transform: capitalize; 
-           display: inline-block;
-           color:black;
-           font-weight: bold;
-        }
-        .özellik1{ /* Bu kısımda CSS ile animasyon ekliyorum*/
-            animation: isim 12s infinite alternate;
-            position: absolute;
-            left:700px;
-            top:310px;
-            right:20px;
-            font-size:28px;
+            padding: 20px;
+            margin: 20px auto;
+            width: 80%;
+            margin: 100px auto 20px auto;
+            text-align: center;
             font-family: 'Times New Roman', Times, serif;
             font-style: italic;
-            font-weight: bold;
-
-        }
-        @keyframes isim{
-            0%{
-                opacity: 1;
-            }
-            25%{
-                opacity: 0;
-            }
-            50%{
-                opacity: 0;
-            }
-            75%{
-                opacity: 0;
-            }
-            100%{
-                opacity: 1;
-            }
-        }
-        .özellik2{ /* Bu kısımda CSS ile animasyon ekliyorum*/
-            animation: isim2 12s infinite alternate;
-            position: absolute;
-            left:700px;
-            top:310px;
-            right:20px;
-            font-size:28px;
-            font-family: 'Times New Roman', Times, serif;
-            font-style: italic;
-            font-weight: bold;
-        }
-        @keyframes isim2{
-            0%{
-                opacity: 0;
-            }
-            25%{
-                opacity: 1;
-            }
-            50%{
-                opacity: 0;
-            }
-            75%{
-                opacity: 0;
-            }
-            100%{
-                opacity: 0;
-        }
-    }
-        .özellik3{ /* Bu kısımda CSS ile animasyon ekliyorum*/
-            animation: isim3 12s infinite alternate;
-            position: absolute;
-            left:700px;
-            top:310px;
-            right:20px;
-            font-size:28px;
-            font-family: 'Times New Roman', Times, serif;
-            font-style: italic;
-            font-weight: bold;
-        }
-        @keyframes isim3{
-            0%{
-                opacity: 0;
-            }
-            25%{
-                opacity: 0;
-            }
-            50%{
-                opacity: 1;
-            }
-            75%{
-                opacity: 0;
-            }
-            100%{
-                opacity: 0;
-        }
-    }
-        .özellik4{ /* Bu kısımda CSS ile animasyon ekliyorum*/
-            animation: isim4 12s infinite alternate;
-            position: absolute;
-            left:700px;
-            top:310px;
-            right:20px;
-            font-size:28px;
-            font-family: 'Times New Roman', Times, serif;
-            font-style: italic;
-            font-weight: bold;
-        }
-        @keyframes isim4{
-            0%{
-                opacity: 0;
-            }
-            25%{
-                opacity: 0;
-            }
-            50%{
-                opacity: 0;
-            }
-            75%{
-                opacity: 1;
-            }
-            100%{
-                opacity: 0;
-        }
-    }
-        .transformers{ /* Bu kısımda CSS ile resmin boyutlandırılması ve gösterilmesi gibi temel özellikelri yapıyorum*/ 
-          position: absolute;
-          left:30px;
-          top:280px;
-          bottom: 50px;
-          animation: imageFade 12s infinite alternate;
-          opacity: 1;
-          width: 600px;
-          height: 380px;
-          border: 5px solid black;
-        }
-        @keyframes imageFade{
-            0%{
-                opacity: 1;
-            }
-            25%{
-                opacity: 0;
-            }
-            50%{
-                opacity: 0;
-            }
-            75%{
-                opacity: 0;
-            }
-            100%{
-                opacity: 1;
-            }
-            
-        }
-        .batman{ /* Bu kısımda CSS ile resmin boyutlandırılması ve gösterilmesi gibi temel özellikelri yapıyorum*/ 
-          position: absolute;
-          left:30px;
-          top:280px;
-          bottom: 50px;
-          animation: imageFade2 12s infinite alternate;
-          opacity: 1;
-          width: 600px;
-          height: 380px;
-          border: 5px solid black;
-        }
-        @keyframes imageFade2{
-            0%{
-                opacity: 0;
-            }
-            25%{
-                opacity: 1;
-            }
-            50%{
-                opacity: 0;
-            }
-            75%{
-                opacity: 0;
-            }
-            100%{
-                opacity: 0;
-            }
-            
-        }
-        .spiderman{ /* Bu kısımda CSS ile resmin boyutlandırılması ve gösterilmesi gibi temel özellikelri yapıyorum*/ 
-          position: absolute;
-          left:30px;
-          top:280px;
-          bottom: 50px;
-          animation: imageFade3 12s infinite alternate;
-          opacity: 1;
-          width: 600px;
-          height: 380px;
-          border: 5px solid black;
-        }
-        @keyframes imageFade3{
-            0%{
-                opacity: 0;
-            }
-            25%{
-                opacity: 0;
-            }
-            50%{
-                opacity: 1;
-            }
-            75%{
-                opacity: 0;
-            }
-            100%{
-                opacity: 0;
-            }
-            
-        }
-        .obivan{ /* Bu kısımda CSS ile resmin boyutlandırılması ve gösterilmesi gibi temel özellikelri yapıyorum*/ 
-          position: absolute;
-          left:30px;
-          top:280px;
-          bottom: 50px;
-          animation: imageFade4 12s infinite alternate;
-          opacity: 1;
-          width: 600px;
-          height: 380px;
-          border: 5px solid black;
-        }
-        @keyframes imageFade4{
-            0%{
-                opacity: 0;
-            }
-            25%{
-                opacity: 0;
-            }
-            50%{
-                opacity: 0;
-            }
-            75%{
-                opacity: 1;
-            }
-            100%{
-                opacity: 0;
-            }
-            
+            font-size: 1.1rem;
+            line-height: 1.6;
+            text-align: justify;
         }
 
-    
+        .hobi span {
+            color: goldenrod;
+            font-weight: bold;
+        }
 
+        /* resimleri flex ile hizaladım ve gap ile boşluk bıraktım */
+        .film {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+        /* Her bir resime kenarlık ekledim ve geçiş efekti uyguladım ayrıca width ve ona karşılık gelen height değerlerini verdim*/
+        .film img {
+            width: 200px;
+            height: auto;
+            border: 3px solid white;
+            border-radius: 10px;
+            transition: transform 0.3s, opacity 0.3s;
+        }
+
+        .film img:hover {
+            transform: scale(1.1);
+            opacity: 0.9;
+        }
     </style>
 </head>
 <body>
-    <div class="header"> <!-- header etiketini tanımladım ve ana menünün html kısmını oluşturdum --> 
+    <!-- Burada header adında bir div etiketi oluşturdum ve web sitenin menülerini konumlandırdım. -->
+    <div class="header">
+        <!-- Menüyü gösterebilmem için bir liste yapmalıydım burada da o listeyi yaptım. -->
         <ul class="menu">
             <li class="menu-item"><a href="index.html">Ana Sayfa</a></li>
             <li class="menu-item"><a href="ben_kimim.html">Ben Kimim</a></li>
@@ -317,20 +113,19 @@
             <li class="menu-item"><a href="projeler.html">Projeler</a></li>
         </ul>
     </div>
+    <!-- Burada main adında bir div etiketi oluşturdum ve web sitede kullanılan resimleri ekledim. -->
     <div class="main">
-        <!-- paragrafı oluşturdum --> 
-        <p class="hobi">Hobilerim sırasıyla 4 ana başlık altında incelenebilir.Bunlardan ilki ve en sevdiğim <span>Transformers</span> filmlerini ve dizilerini izlemek.Diğer beni cezbeden hobilerim ise <span>DC </span> yapımı süper kahraman filmlerini izlemek,özellikle de bu son zamanlarda ilgimi çeken <span>Marvel</span> filmlerini ve video oyunlarını oynamak.Sonuncusu ise özellikle ailemle beraber izlediğim <span> Star Wars </span> filmlerini seyretmektir.Bu hobilerim sayesinde boş zamanlarımı doldurup güzel bir vakit geçiriyorum.Bu web sayfasını ziyaret eden herkese de bu tarz film veya dizileri izleme gibi hobilere katkı sağlamak çok isterim.Nunun için bu tarz film veya dizielrdeki ana karakterlerin özelliklerini ve kısa hayat hikayelerini siz okuyculara web sayfasının alt kısmında gösterdim.</p>
+        <!-- Burada paragrafı yazdım. -->
+        <p class="hobi">Hobilerim sırasıyla 4 ana başlık altında incelenebilir. Bunlardan ilki ve en sevdiğim <span>Transformers</span> filmlerini ve dizilerini izlemek. Diğer beni cezbeden hobilerim ise <span>DC</span> yapımı süper kahraman filmlerini izlemek, özellikle de bu son zamanlarda ilgimi çeken <span>Marvel</span> filmleri ve video oyunlarını oynamak. Sonuncusu ise özellikle ailemle beraber izlediğim <span>Star Wars</span> filmlerini seyretmektir. Bu hobilerim sayesinde boş zamanlarımı doldurup güzel vakit geçiriyorum. Bu web sayfasını ziyaret eden herkese de bu tarz film veya dizileri izleme gibi hobilere katkı sağlamak çok isterim.Transformers filmleri izlemek özellikle Optimus Prime'ın savaş sahnelerini ailemle televizyon karşısında izlemek beni çok mutlu ediyor.Kendimi bir sinema filminde gibi hissediyorum.DC ve Marvel fimlerinde ise okuduğum çizgi romanların gerçek hayata aktarımını görüyorum ve bu benim hoşuma gidiyor.Star Wars filmlerinin felsefik yapısı da beni düşündürüyor.Kısacası izlediğim tüm bu dizi ve filmler beni mutlu ediyor.</p>
+        
     </div>
+ 
     <div class="film">
-        <img class="transformers" src="transformers.webp">
-        <img class="batman" src="batman.webp">
-        <img class="spiderman" src="spiderman.jpeg">
-        <img class="obivan" src="obivan.jpg">
+        <!-- Buradaki div etiketinin altında resimleri tanımladım.CSS'de ise bu resimleri yukarıda biçimlendirdim -->
+        <img src="transformers.webp" alt="Transformers">
+        <img src="batman.webp" alt="Batman">
+        <img src="spiderman.jpeg" alt="Spiderman">
+        <img src="obivan.jpg" alt="Obi-Wan Kenobi">
     </div>
-    <!-- paragrafları oluşturdum --> 
-    <p class="özellik1">Optimus Prime,otobotların lideri olarak binlerce yıldır CyberTron gezegeninin korunmasında ve Decepticonlar'a karşı oluşan savaşta insan ırkını korumakta görev almıştır.Bu düşüncesi yüzünden kardeşi sayılan Megatron ile fikir ayrılığına uğramış ve Sentinel Prime'ın ihanetinde uğramıştır.Her ne kadar insan ırkını desteklese de insanlar Lockdown ve Galvatron ile iş birliği yaparak Optimus Prime'ı devirmeye çalışmışlardır.</p>
-    <p class="özellik2">Batman,Gotham şehrini suçlulardan korumaya yemin etmiş bir adalet savaşçısıdır.herhangi bir süper gücü olmamasına rağmen sahip olduğu bilgisi ve teknik becerisiyle Süperman'i bile bire bir mücadele de yenebilmiştir.Joker,Hush,Riddler gibi Gotham halkını tehdit eden suçlulardan korumaktadır.</p>
-    <p class="özellik3">Spiderman,üniversite de okuyan sıradan bir öğrenci olan Peter Parker'ın bir radyoaktiv örümcek tarafından ısırılması sonucu oluşan Peter Parker'ın diğer kişiliğidir.Çeşitli fiziksel güçlere sahip olan Spiderman'in en büyük düşmanlarından olan Green Goblin,Venom ve Kraven ile mücadele etmektedir.Tüm bu mücadelerin yanında kendi hayatını kurmaya çalışan genç bir insandır.</p>
-    <p class="özellik4">Obi-Wan Kenobi,çok uzak bir galakside İmparatorluğu devirip Cumhuriyeti korumaya çalışan bir Jedi Ustası'dır.Güzel ahlakı ve sahip olduğu teknik bilgisiyle bir çok Jei Ustası'ndan daha öne çıkmaktadır.Yanına aldığı çırak olan ve seçilmiş kişi olduğuna inanılan Anakin SkyWalker'ın ustası olarak yaklaşık 20 yıl geçirmiştir.Anakin SkyWalker'ın ihaneti yüzünden kendini affetmemiş ve geri kalan hayatını bir çöl gezegeninde geçirmiştir. </p>
 </body>
 </html>
